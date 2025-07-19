@@ -1,4 +1,4 @@
-import { Server } from "@hapi/hapi"
+import { Server } from '@hapi/hapi';
 
 export const defineRoutes = (server: Server) => {
     server.route({
@@ -6,8 +6,8 @@ export const defineRoutes = (server: Server) => {
         path: '/ping',
         handler: async (request, h) => {
             return {
-                ok: true
-            }
-        }
-    })  
-}
+                ok: true,
+            };
+        },
+    });
+};
