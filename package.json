@@ -4,8 +4,10 @@
   "description": "Coding Interview Backend Level 3",
   "main": "src/index.ts",
   "scripts": {
-    "test": "npm run test:prepare && cross-env NODE_ENV=test dotenv -e .env.test -- jest e2e",
-    "test:prepare": "dotenv -e .env.test -- npx prisma migrate reset --force --skip-seed"
+    "test": "npm run test:prepare && cross-env NODE_ENV=test dotenv -e .env.test -- jest",
+    "test:prepare": "dotenv -e .env.test -- npx prisma migrate reset --force --skip-seed",
+    "test:unit": "jest tests",
+    "test:e2e": "npm run test:prepare && cross-env NODE_ENV=test dotenv -e .env.test -- jest e2e"
   },
   "author": "El Dorado Dev Team",
   "license": "ISC",
