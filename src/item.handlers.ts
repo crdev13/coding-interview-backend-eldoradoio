@@ -26,3 +26,13 @@ export const updateItem = async (request: Request, h: ResponseToolkit) => {
         return h.response({ error: 'Item not found' }).code(404);
     }
 };
+
+export const deleteItem = async (request: Request, h: ResponseToolkit) => {
+    const id = parseInt(request.params.id);
+    try {
+        await ItemService.deleteItem(id);
+        return h.response().code(204);
+    } catch {
+        return h.response({ error: 'Item not found' }).code(404);
+    }
+};

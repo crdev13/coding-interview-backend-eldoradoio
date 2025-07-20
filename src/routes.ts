@@ -80,4 +80,23 @@ export const defineRoutes = (server: Server) => {
         },
         handler: Handlers.updateItem,
     });
+
+    server.route({
+        method: 'DELETE',
+        path: '/items/{id}',
+        options: {
+            validate: {
+                params: Joi.object({
+                    id: Joi.number().integer().positive().required(),
+                }),
+                failAction: (request, h, err: any) => {
+                    return h
+                        .response({ error: err.message })
+                        .code(400)
+                        .takeover();
+                },
+            },
+        },
+        handler: Handlers.deleteItem,
+    });
 };
