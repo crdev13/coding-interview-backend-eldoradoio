@@ -16,3 +16,13 @@ export const createItem = async (request: Request, h: ResponseToolkit) => {
     const item = await ItemService.createItem({ name, price });
     return h.response(item).code(201);
 };
+
+export const updateItem = async (request: Request, h: ResponseToolkit) => {
+    const id = parseInt(request.params.id);
+    const { name, price } = request.payload as any;
+    try {
+        return await ItemService.updateItem(id, { name, price });
+    } catch {
+        return h.response({ error: 'Item not found' }).code(404);
+    }
+};
