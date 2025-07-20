@@ -3,3 +3,4 @@ mock.ts
 .vscode
 /generated/prisma
 .env
+/prisma/dev.db
