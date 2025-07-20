@@ -2,5 +2,5 @@ node_modules
 mock.ts
 .vscode
 /generated/prisma
-.env
 /prisma/dev.db
+/prisma/test.db

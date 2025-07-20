@@ -1,6 +1,7 @@
 import { Server } from '@hapi/hapi';
 import * as Handlers from './item.handlers';
 import Joi from 'joi';
+import { validationErrorFormatter } from './utils/validation-error-formatter';
 
 export const defineRoutes = (server: Server) => {
     server.route({
@@ -49,7 +50,7 @@ export const defineRoutes = (server: Server) => {
                 }),
                 failAction: (request, h, err) => {
                     return h
-                        .response({ error: err?.message ?? 'Invalid request' })
+                        .response(validationErrorFormatter(err))
                         .code(400)
                         .takeover();
                 },
@@ -72,7 +73,7 @@ export const defineRoutes = (server: Server) => {
                 }),
                 failAction: (request, h, err) => {
                     return h
-                        .response({ error: err?.message ?? 'Invalid request' })
+                        .response(validationErrorFormatter(err))
                         .code(400)
                         .takeover();
                 },
