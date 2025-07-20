@@ -37,4 +37,24 @@ export const defineRoutes = (server: Server) => {
         },
         handler: Handlers.getItemById,
     });
+
+    server.route({
+        method: 'POST',
+        path: '/items',
+        options: {
+            validate: {
+                payload: Joi.object({
+                    name: Joi.string().min(1).required(),
+                    price: Joi.number().positive().required(),
+                }),
+                failAction: (request, h, err) => {
+                    return h
+                        .response({ error: err?.message ?? 'Invalid request' })
+                        .code(400)
+                        .takeover();
+                },
+            },
+        },
+        handler: Handlers.createItem,
+    });
 };

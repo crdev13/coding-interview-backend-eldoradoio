@@ -10,3 +10,9 @@ export const getItemById = async (request: Request, h: ResponseToolkit) => {
     const item = await ItemService.getItemById(id);
     return item ?? h.response({ error: 'Item not found' }).code(404);
 };
+
+export const createItem = async (request: Request, h: ResponseToolkit) => {
+    const { name, price } = request.payload as any;
+    const item = await ItemService.createItem({ name, price });
+    return h.response(item).code(201);
+};
