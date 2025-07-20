@@ -6,6 +6,14 @@ import { validationErrorFormatter } from './utils/validation-error-formatter';
 export const defineRoutes = (server: Server) => {
     server.route({
         method: 'GET',
+        path: '/',
+        handler: async (request, h) => {
+            return { message: 'ElDorado Backend Challenge API' };
+        },
+    });
+
+    server.route({
+        method: 'GET',
         path: '/ping',
         handler: async (request, h) => {
             return {
