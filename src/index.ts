@@ -5,4 +5,6 @@ process.on('unhandledRejection', (err) => {
     process.exit(1);
 });
 
-await startServer();
+(async () => {
+    await startServer();
+})();
