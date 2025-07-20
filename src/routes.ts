@@ -1,4 +1,5 @@
 import { Server } from '@hapi/hapi';
+import * as Handlers from './item.handlers';
 
 export const defineRoutes = (server: Server) => {
     server.route({
@@ -9,5 +10,11 @@ export const defineRoutes = (server: Server) => {
                 ok: true,
             };
         },
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/items',
+        handler: Handlers.getItems,
     });
 };
