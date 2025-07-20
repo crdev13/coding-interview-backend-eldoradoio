@@ -4,7 +4,7 @@
   "description": "Coding Interview Backend Level 3",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts --exec ts-node src/index.ts",
+    "dev": "npx prisma migrate deploy && nodemon --watch src --ext ts --exec ts-node src/index.ts",
     "test": "npm run test:prepare && cross-env NODE_ENV=test dotenv -e .env.test -- jest",
     "test:prepare": "dotenv -e .env.test -- npx prisma migrate reset --force --skip-seed",
     "test:unit": "jest tests",
