@@ -1,0 +1,43 @@
+### GET ping
+GET http://localhost:3000/ping
+Accept: application/json
+
+###
+
+### GET all items
+GET http://localhost:3000/items
+Accept: application/json
+
+###
+
+### POST create new item
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+  "name": "Test Item",
+  "price": 100
+}
+
+###
+
+### GET item by ID
+GET http://localhost:3000/items/1
+Accept: application/json
+
+###
+
+### PUT update item
+PUT http://localhost:3000/items/1
+Content-Type: application/json
+
+{
+  "name": "Updated Item",
+  "price": 150
+}
+
+###
+
+### DELETE item
+DELETE http://localhost:3000/items/1
+Accept: application/json
