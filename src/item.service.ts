@@ -13,7 +13,10 @@ export const getItemById = (id: number): Promise<Item | null> => {
     return prisma.item.findUnique({ where: { id } });
 };
 
-export const updateItem = (id: number, data: UpdateItemInput): Promise<Item> => {
+export const updateItem = (
+    id: number,
+    data: UpdateItemInput
+): Promise<Item> => {
     return prisma.item.update({ where: { id }, data });
 };
 
