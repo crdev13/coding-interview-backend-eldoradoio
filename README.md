@@ -117,3 +117,17 @@ Make sure you have Docker and the **Dev Containers** extension installed.
 -   `GET /items/{id}` – Get item by ID
 -   `PUT /items/{id}` – Update an item
 -   `DELETE /items/{id}` – Delete an item
+
+### API Testing
+
+To test the API endpoints, you can use the [REST Client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) in VS Code.
+
+Example requests are located [docs/requests.http](docs/requests.http)
+
+Ensure the service is running locally before sending any requests:
+
+```bash
+npm run dev
+```
+
+This setup allows you to quickly test all endpoints directly within your editor.
