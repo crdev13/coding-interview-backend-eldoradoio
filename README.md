@@ -41,3 +41,79 @@ Eres el Senior Developer de tu equipo en El Dorado, y te han dado la responsabil
 7. PROFIT
 
 ### Cualquier duda contactarme a https://www.linkedin.com/in/andreujuan/
+
+---
+
+# 🛠️ Developer Guide
+
+## 🚀 Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Server will run on: http://localhost:3000
+
+---
+
+## ⚙️ Environment Variables
+
+The `.env` file is already included in the repository for local development.
+
+Use `.env.test` for running tests.
+
+---
+
+## 🧪 Running Tests
+
+### All tests (unit + e2e)
+
+```bash
+npm test
+```
+
+### Unit tests only
+
+```bash
+npm run test:unit
+```
+
+### E2E tests only
+
+```bash
+npm run test:e2e
+```
+
+> Prisma migrations are automatically applied before tests.
+
+---
+
+## 🐳 DevContainer
+
+This project supports [VSCode DevContainers](https://containers.dev/):
+
+-   Installs dependencies on creation
+-   Automatically starts the dev server
+-   Forwards port `3000`
+
+Make sure you have Docker and the **Dev Containers** extension installed.
+
+---
+
+## 📬 API Endpoints
+
+-   `GET /` – API info
+-   `GET /ping` – Health check
+-   `GET /items` – List all items
+-   `POST /items` – Create a new item
+-   `GET /items/{id}` – Get item by ID
+-   `PUT /items/{id}` – Update an item
+-   `DELETE /items/{id}` – Delete an item
